@@ -1,13 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>SampleDisco | Hua (Harry) Jiang</title>
-<!-- Permanent CV link: this page forwards to the paper. To restore the project page, rebuild it from website/_src. -->
+<meta name="description" content="A method that places single-cell samples from different studies and assays (RNA, chromatin accessibility, protein) in one shared embedding without paired measurements, ranking first overall against 13 other methods in all four benchmark panels." />
 <meta name="robots" content="noindex" />
-<link rel="canonical" href="https://arxiv.org/abs/1706.03762" />
-<meta http-equiv="refresh" content="0; url=https://arxiv.org/abs/1706.03762" />
-<script>location.replace("https://arxiv.org/abs/1706.03762");</script>
+<link rel="canonical" href="https://j041120h.github.io/sampledisco/" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="SampleDisco" />
+<meta property="og:description" content="A method that places single-cell samples from different studies and assays (RNA, chromatin accessibility, protein) in one shared embedding without paired measurements, ranking first overall against 13 other methods in all four benchmark panels." />
+<meta property="og:url" content="https://j041120h.github.io/sampledisco/" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230a4a7a'/%3E%3Ctext x='50' y='67' font-family='Helvetica,Arial,sans-serif' font-size='42' font-weight='600' fill='%23ffffff' text-anchor='middle'%3EHJ%3C/text%3E%3C/svg%3E" />
+<script>
+(function(){var t='light';try{var s=localStorage.getItem('theme');t=s||(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');}catch(e){}
+document.documentElement.setAttribute('data-theme',t);})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/project.css?v=4">
 </head>
-<body><p>Redirecting to the paper… If nothing happens, <a href="https://arxiv.org/abs/1706.03762">continue here</a>.</p></body>
+<body>
+<header class="topbar"><div class="bar">
+  <a class="brand" href="../">Hua (Harry) Jiang</a>
+  <a class="home-link" href="../#research"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>All research</a>
+  <button class="theme-btn" id="theme" type="button" aria-label="Toggle color theme" aria-pressed="false"><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.4M12 19.6V22M2 12h2.4M19.6 12H22M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M19.1 4.9l-1.7 1.7M6.6 17.4l-1.7 1.7"/></svg><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.4A8 8 0 0 1 9.6 4 7 7 0 1 0 20 14.4Z"/></svg></button>
+</div></header>
+
+<main>
+  <div class="eyebrow">Research · Single-cell multi-omics</div>
+  <h1>SampleDisco</h1>
+  <p class="subtitle">Harmonizing Single-Cell Data Across Studies and Modalities to Reveal Sample Heterogeneity</p>
+  <p class="authors"><strong>Harry Jiang</strong>, Z. Ji, Y. Wang, M. Jiang, Y. Man, <a href="https://publichealth.jhu.edu/faculty/1943/hongkai-ji" target="_blank" rel="noopener noreferrer">Hongkai Ji</a></p>
+  
+  <nav class="links" aria-label="Links"><a class="primary" href="https://github.com/J041120h/SampleDisco" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.2 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.34-5.47-5.96 0-1.32.47-2.39 1.24-3.23-.12-.31-.54-1.53.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.65.24 2.87.12 3.18.77.84 1.24 1.91 1.24 3.23 0 4.63-2.81 5.65-5.49 5.95.43.37.82 1.1.82 2.22v3.29c0 .32.21.7.83.58A12 12 0 0 0 24 12.5C24 5.87 18.63.5 12 .5z"/></svg>Code</a><a href="https://j041120h.github.io/SampleDisco_tutorial/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 5.5c3-1.3 6.2-1.3 9.5.8 3.3-2.1 6.5-2.1 9.5-.8v13c-3-1.3-6.2-1.3-9.5.8-3.3-2.1-6.5-2.1-9.5-.8z"/><path d="M12 6.3v13"/></svg>Tutorial</a><a href="https://pypi.org/project/sampledisco/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 7.5 12 3 3 7.5v9L12 21l9-4.5z"/><path d="M3 7.5 12 12l9-4.5M12 12v9"/></svg>PyPI</a></nav>
+  <div class="tldr"><div class="eyebrow">In short</div><p>Single-cell studies now include hundreds of patients or donors, but comparing those samples is hard when they come from different studies or were measured with different assays. SampleDisco summarizes each sample by which cell states it contains and how its cells are shifted within each cell type, placing RNA, chromatin-accessibility and protein samples in one shared embedding without paired measurements. Against 13 other methods it ranked first overall in all four benchmark panels, and it was used to follow donors across assays over time and to find candidate regulatory programs along a COVID-19 severity trajectory.</p></div>
+  <div class="stats"><div class="stat"><div class="stat-v">1st of 14</div><div class="stat-k">methods, overall, in each of the four benchmark panels</div></div><div class="stat"><div class="stat-v">0.87 / 0.90</div><div class="stat-k">cross-assay AUC for CMV status / age group (RNA to protein)</div></div><div class="stat"><div class="stat-v">16</div><div class="stat-k">monocyte TF motifs concordant in mRNA, motif activity and targets</div></div></div>
+  <section>
+    <h2>The problem</h2>
+    <p>Single-cell sequencing measures thousands of individual cells per sample, and studies now often include hundreds of samples from different patients, donors or tissues. Many key questions concern samples rather than cells: which patients resemble each other, how a disease progresses, and which cellular programs drive those differences.</p>
+    <p>Answering them requires a <strong>sample embedding</strong>, a map in which each sample is one point and distances reflect biological similarity. Samples can differ because cell types expand or shrink (composition) or because cells of the same type shift their state, and study or batch effects can swamp both signals.</p>
+    <p>The hardest case is unpaired multi-omics data: one cohort profiled by scRNA-seq (gene expression), another by scATAC-seq (which measures open chromatin), with no known sample correspondence. Existing sample-level methods were designed for single-omics or paired data, and a prior benchmark found that simple composition and pseudobulk baselines often match more complex ones.</p>
+  </section>
+  <section>
+    <h2>How it works</h2>
+    <p>SampleDisco describes each sample through two complementary channels. The <strong>composition</strong> channel records how its cells are spread over shared cell states at three resolutions, from coarse cell types to fine clusters. The <strong>reference-relative mean displacement (RMD)</strong> channel records, for each coarse cell type, how far the sample's average cell lies from a reference built from the other samples of the same modality or study.</p>
+    <p>Building that reference within each modality or study removes global assay and batch offsets. Because SampleDisco works on top of an existing integrated cell space (scGLUE for RNA&ndash;ATAC, MaxFuse for RNA&ndash;protein), samples from different assays land in one embedding without paired measurements.</p>
+    <ul class="points"><li><strong>Two cell spaces:</strong> one with sample effects removed, which defines clusters shared by all samples, and one that keeps sample-level variation for measuring displacement.</li><li><strong>Four blocks:</strong> coarse, medium and fine composition (cells softly assigned to up to 120 and 300 cluster “anchors” at the finer levels) plus RMD, down-weighted when a sample has few cells of a type.</li><li><strong>Fusion:</strong> blocks are rescaled and weighted (by default RMD carries as much weight as the three composition blocks combined), concatenated, reduced to 10 dimensions by principal component analysis (PCA) and corrected for remaining batch or modality effects with Harmony.</li><li><strong>Optional phenotype guidance:</strong> when labels are partly known, the RMD weight can be tuned to balance batch mixing against label preservation.</li><li><strong>Downstream tools:</strong> sample clustering, pseudotime trajectories, phenotype prediction and label transfer, longitudinal fate prediction, and differential analysis of genes and transcription-factor motifs.</li></ul>
+    <figure class="fig" style="--figw:860px"><a href="figs/overview.webp" target="_blank" rel="noopener noreferrer" title="Open full size"><img src="figs/overview.webp" width="1559" height="1416" alt="Four-stage workflow diagram: sample metadata and count data, two integrated cell spaces, composition and displacement blocks fused into a sample embedding, and downstream analyses such as trajectories and label transfer." loading="lazy"></a><figcaption>Panel B of Figure 1. Cells already placed in a shared space (stages 1&ndash;2) are summarized per sample as composition at three resolutions (A1&ndash;A3) plus a reference-relative mean displacement (RMD) block. The blocks are scaled, concatenated, reduced by PCA and batch-corrected into one point per sample (stage 3), which feeds trajectory, label-transfer, fate-prediction and molecular analyses (stage 4).</figcaption></figure>
+    <p>The two channels capture different biology. In ENCODE multi-tissue data (44 specimens, 10 tissues), the composition blocks separated tissues more sharply than the RMD block. In scBloodNL, where blood cells were stimulated with pathogens for 3 or 24 hours, the RMD block rather than composition was organized by timepoint, and in the fused embedding timepoint outweighed pathogen identity (maximum per-component R<sup>2</sup> 0.95 versus 0.26).</p>
+  </section>
+  <section>
+    <h2>Benchmark results</h2>
+    <p>SampleDisco was compared with 13 other approaches: eleven existing sample-embedding methods (including PILOT, QOT, GloScope, MrVI, scPoli and GEDI), the composition baseline scECODA and a pseudobulk baseline. Metrics scored removal of modality or batch effects, preservation of biological labels and, where known, recovery of matched pairs.</p>
+    <p>On four paired RNA&ndash;ATAC datasets with the pairing hidden (ENCODE tissues, heart disease, fetal lutea and retina), the other methods tended to trade modality removal against biology preservation. SampleDisco was the only method in the top three of every category, ranked first in each, and placed first in every dataset (mean rank 1.125). In the fetal tissues, embedding distance tracked age difference (rank correlation 0.86 in lutea, 0.90 in retina).</p>
+    <figure class="fig" style="--figw:860px"><a href="figs/paired.webp" target="_blank" rel="noopener noreferrer" title="Open full size"><img src="figs/paired.webp" width="1515" height="1764" alt="Scatter plots of paired RNA and ATAC samples from four datasets, colored by modality and by tissue, disease state or age, above a dot-plot ranking 14 sample-embedding methods." loading="lazy"></a><figcaption>Figure 3. Panels A&ndash;H show the sample embeddings of four paired RNA&ndash;ATAC datasets; gray lines join the RNA and ATAC samples of the same specimen, a pairing the method never saw. The two assays interleave while tissue (B), disease state (D) and fetal age (F, H) stay organized. Panel I ranks the 14 methods averaged over the four datasets: the bar is the inverse of the mean rank, and SampleDisco leads modality removal, biology preservation and pairing.</figcaption></figure>
+    <ul class="points"><li><strong>Unpaired COVID-19</strong> (405 RNA samples from 11 studies, plus 26 ATAC samples from another): first overall (mean rank 2.17), leading batch and modality removal. Severity directions fitted separately in RNA and ATAC both tracked severity (r = 0.64 and 0.57).</li><li><strong>Lifespan immune atlas</strong> (167 RNA and 23 ATAC donors): first overall (mean rank 2.17) and third on biology preservation; the first component correlated with log age at |r| = 0.81.</li><li><strong>Single-modality RNA</strong> (COVID-19 subsets of 25&ndash;405 samples; 316 healthy-aging samples): first for COVID-19 RNA and for the two combined (mean rank 3.28). Pseudobulk led biology preservation in COVID-19 RNA, and on healthy aging alone SampleDisco placed second, behind scECODA.</li></ul>
+  </section>
+  <section>
+    <h2>Following donors across assays and time</h2>
+    <p>The Sound Life cohort followed 96 healthy younger and older adults for about two years: 868 blood draws, each profiled by scRNA-seq and by spectral flow cytometry (protein), giving 1,736 samples. Modality explained only 2% of embedding variation, and for 58.3% of RNA samples a protein sample from the same donor was among the five nearest, against 5.4% expected by chance.</p>
+    <figure class="fig" style="--figw:1080px"><a href="figs/longitudinal.webp" target="_blank" rel="noopener noreferrer" title="Open full size"><img src="figs/longitudinal.webp" width="1616" height="552" alt="Three scatter plots of RNA and protein samples in the shared embedding, colored by assay, by processing batch and by donor." loading="lazy"></a><figcaption>Panels A&ndash;C of Figure 5. In the Sound Life cohort (868 blood draws from 96 donors), RNA samples (circles) and protein samples (triangles) overlap in one embedding (A), processing batches are interspersed (B), and the repeated draws of each highlighted donor stay together across both assays and visits (C).</figcaption></figure>
+    <ul class="points"><li>Cytomegalovirus (CMV) serostatus and age group were predicted with areas under the ROC curve (AUC) of 0.86&ndash;0.91 within an assay and 0.86&ndash;0.90 when training on one assay and testing on the other. The mean over these eight tests (0.873) was higher than for other sample-embedding methods run on the same cells.</li><li>A model of each donor's expected path flagged donor BR1049 as the largest departure along the CMV axis, from day 381 onward. This matches the CMV seroconversion the source study documented in that participant, with a first positive test at about day 380.</li></ul>
+  </section>
+  <section>
+    <h2>From samples back to genes and regulators</h2>
+    <p>In the unpaired COVID-19 embedding, four <em>k</em>-means clusters of the RNA samples matched clinical severity only partly (40% agreement), yet reproduced severity-linked composition changes: 24 of 28 significant shifts went the same way, with monocyte enrichment and T-cell depletion in the most severe cluster.</p>
+    <p>Two clusters corresponding to mild and moderate disease differed at 722 T-cell genes and lay on opposite sides of an axis matching a published CMV-serostatus signature (R<sup>2</sup> = 0.64 on the second component). After covariate adjustment, the differential genes overlapped 141 signature genes, against 35.8 expected by chance, and all 141 changed in the same direction: a CMV-associated axis the metadata never recorded.</p>
+    <p>A severity pseudotime, the embedding direction most correlated with clinical severity, orders RNA and ATAC samples together without paired cells. Along it, 209 transcription-factor (TF) motifs changed in activity in monocytes, versus 152 when clinical labels were used directly, and all 125 shared motifs agreed in direction. Sixteen motifs passed a stricter test requiring concordant change in TF mRNA, motif activity and target-gene expression (no shuffled pseudotime produced any), pointing to a candidate monocyte program involving JDP2, FOSL2, MAF, MAFG, BACH1 and RUNX1.</p>
+    <figure class="fig" style="--figw:1080px"><a href="figs/regulatory.webp" target="_blank" rel="noopener noreferrer" title="Open full size"><img src="figs/regulatory.webp" width="1633" height="738" alt="Venn diagrams of label- and trajectory-based motifs, a bar chart of monocyte transcription-factor motifs, heatmaps across three molecular layers, and curves along pseudotime at the CLU locus." loading="lazy"></a><figcaption>Panels G&ndash;J of Figure 6. The severity-trajectory test found more TF motifs than the clinical-label test, with large overlap (G), and six of the ten strongest monocyte motif changes belong to the AP-1 family (H). Sixteen motifs rose concordantly in TF mRNA, motif activity and target-gene expression (I), illustrated at the CLU locus, where JDP2 mRNA, JDP2 motif activity, a promoter peak and CLU mRNA increase together (J).</figcaption></figure>
+  </section>
+  <section>
+    <h2>Why it matters</h2>
+    <p>SampleDisco treats sample embedding as a problem in its own right, keeping composition and within-cell-type displacement as separate, explicitly weighted summaries. Because it builds on any cell-level integration, it can compare samples from RNA, chromatin and protein assays that were never measured together.</p>
+    <p>The study also notes limits: SampleDisco inherits errors from the upstream integration, no embedding was best on every metric or cohort, and the regulatory programs are candidates rather than established mechanisms. The method is released as the <em>sampledisco</em> Python package.</p>
+  </section>
+
+</main>
+
+<footer><span>Hua (Harry) Jiang · Johns Hopkins University</span><a href="../">More about me →</a></footer>
+
+<script>
+(function(){
+  var root=document.documentElement,btn=document.getElementById('theme');
+  btn.setAttribute('aria-pressed',String(root.getAttribute('data-theme')==='dark'));
+  btn.addEventListener('click',function(){var n=root.getAttribute('data-theme')==='dark'?'light':'dark';root.setAttribute('data-theme',n);btn.setAttribute('aria-pressed',String(n==='dark'));try{localStorage.setItem('theme',n);}catch(e){}});
+  /* opened from disk: folder links need an explicit index.html */
+  if(location.protocol==='file:'){document.querySelectorAll('a[href]').forEach(function(a){var h=a.getAttribute('href');if(/^([a-z]+:|#|\/\/)/i.test(h))return;var i=h.indexOf('#'),p=i<0?h:h.slice(0,i),r=i<0?'':h.slice(i);if(/\/$/.test(p))a.setAttribute('href',p+'index.html'+r);});}
+  var am=document.getElementById('authorsMore');
+  if(am){am.addEventListener('click',function(){am.previousElementSibling.hidden=false;am.remove();});}
+  var cb=document.getElementById('copyBib');
+  if(cb&&navigator.clipboard){cb.addEventListener('click',function(){navigator.clipboard.writeText(document.getElementById('bibText').textContent).then(function(){cb.textContent='Copied!';setTimeout(function(){cb.textContent='Copy';},1500);});});}
+})();
+</script>
+</body>
 </html>
