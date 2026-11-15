@@ -222,9 +222,9 @@ footer{margin-top:32px;padding:24px 0 40px;border-top:1px solid var(--line);font
     <h2 class="label">Research</h2>
     <!-- DRAFT: research statement written from the resume; edit freely -->
     <p>I work in <strong>computational biology</strong>, at the intersection of <strong>single-cell &amp; spatial multi-omics</strong> and <strong>AI agents for science</strong>. Biological data now arrive from many studies, modalities, and technologies, but rarely measured all together. My research asks how to make these fragmented measurements add up. I build methods that <span class="nb"><button type="button" class="peek-trigger" aria-expanded="false" aria-controls="peek-harmonize">harmonize</button></span> samples across studies and modalities, <span class="nb"><button type="button" class="peek-trigger" aria-expanded="false" aria-controls="peek-predict">predict</button></span> the features a technology did not measure, and <span class="nb"><button type="button" class="peek-trigger" aria-expanded="false" aria-controls="peek-automate">automate</button></span> analysis from a natural-language question to a validated result.</p>
-    <div class="peek-card" id="peek-harmonize"><div class="peek-head">Harmonize across studies</div>Embed single-cell samples from different studies and modalities (scRNA-seq, scATAC-seq, proteomics) in one shared space, without paired measurements.<div class="peek-rel">See <a href="#pub-sampledisco">SampleDisco</a></div></div>
-    <div class="peek-card" id="peek-predict"><div class="peek-head">Predict what wasn't measured</div>Impute unmeasured genes and proteins in spatial data using foundation-model gene embeddings and transformer-based spatial attention.<div class="peek-rel">See <a href="#pub-resonate">RESONATE</a></div></div>
-    <div class="peek-card" id="peek-automate"><div class="peek-head">Automate analysis</div>Multi-agent systems that turn natural-language requests into validated epigenomic analyses, scripts, and reports.<div class="peek-rel">See <a href="#pub-chromapilot">ChromaPilot</a></div></div>
+    <div class="peek-card" id="peek-harmonize"><div class="peek-head">Harmonize across studies</div>Embed single-cell samples from different studies and modalities (scRNA-seq, scATAC-seq, proteomics) in one shared space, without paired measurements.</div>
+    <div class="peek-card" id="peek-predict"><div class="peek-head">Predict what wasn't measured</div>Impute unmeasured genes and proteins in spatial data using foundation-model gene embeddings and transformer-based spatial attention.</div>
+    <div class="peek-card" id="peek-automate"><div class="peek-head">Automate analysis</div>Multi-agent systems that turn natural-language requests into validated epigenomic analyses, scripts, and reports.</div>
   </div>
 
   <div class="status todo-only"><!-- remove todo-only once the Next card is filled in -->
@@ -237,7 +237,7 @@ footer{margin-top:32px;padding:24px 0 40px;border-top:1px solid var(--line);font
 <!-- TODO: exact months for items dated by year only -->
 <section class="page" id="news"><h2>News</h2>
 <ul class="news collapsed" id="newsList">
-  <li><span class="date">Fall 2026</span><span><a href="#pub-resonate">RESONATE</a> won <a href="https://drive.google.com/file/d/1xrMdgGxHJmxyZXe3chiOF3fvlTFbjdYs/view?usp=sharing" target="_blank" rel="noopener noreferrer">Second Best Overall Poster</a> at the <a href="https://ai.jhu.edu/event/data-science-and-ai-institute-fall-2026-symposium-artificial-intelligence-and-human-learning/" target="_blank" rel="noopener noreferrer">JHU Data Science &amp; AI Institute Fall Symposium</a>.</span></li>
+  <li><span class="date">Fall 2026</span><span>My RESONATE poster won <a href="https://drive.google.com/file/d/1xrMdgGxHJmxyZXe3chiOF3fvlTFbjdYs/view?usp=sharing" target="_blank" rel="noopener noreferrer">Second Best Overall Poster</a> at the <a href="https://ai.jhu.edu/event/data-science-and-ai-institute-fall-2026-symposium-artificial-intelligence-and-human-learning/" target="_blank" rel="noopener noreferrer">JHU Data Science &amp; AI Institute Fall Symposium</a>.</span></li>
   <li><span class="date">Jul 2026</span><span><a href="https://doi.org/10.1088/2632-2153/ae7f6a" target="_blank" rel="noopener noreferrer">Lessons Learned from the 2025 Agentic AI for Science Hackathon</a> is published in <span class="chip">Machine Learning: Science and Technology</span>.</span></li>
   <li><span class="date">2026</span><span>Awarded the Provost's Undergraduate Research Award (PURA) for the second time.</span></li>
   <li><span class="date">Nov 2025</span><span>My co-first-author paper on <a href="https://doi.org/10.1016/j.fbio.2025.107682" target="_blank" rel="noopener noreferrer">engineering a thermostable glycosyltransferase</a> is published in <span class="chip">Food Bioscience</span>.</span></li>
@@ -248,7 +248,6 @@ footer{margin-top:32px;padding:24px 0 40px;border-top:1px solid var(--line);font
 </section>
 
 <!-- ============================== PUBLICATIONS ============================== -->
-<!-- TODO: full first names for co-authors shown with initials -->
 <section class="page" id="publications"><h2>Publications</h2>
 <ol class="pubs">
   <li class="pub" id="pub-ugt"><h3 class="pub-title"><a href="https://doi.org/10.1016/j.fbio.2025.107682" target="_blank" rel="noopener noreferrer">Improving the Thermostability of Glycosyltransferase UGT94E13 by Rational Design for Highly Efficient Biosynthesis of Rebaudioside M8</a></h3>
@@ -256,24 +255,6 @@ footer{margin-top:32px;padding:24px 0 40px;border-top:1px solid var(--line);font
     <p class="pub-venue"><span class="chip">Food Bioscience 2025</span><span class="pub-kw">Protein engineering · Molecular dynamics · Biocatalysis</span></p>
     <p class="pub-tldr">Computer-aided rational design (PROSS, FireProt, conservation filtering, and MD simulations) found thermostabilizing mutations; the best variant raised <em>T</em><sub>m</sub> by 5.4&nbsp;°C and extended half-life 14.8×, overcoming the stability–catalysis trade-off.</p>
     <nav class="links sm" aria-label="Paper links"><a href="https://doi.org/10.1016/j.fbio.2025.107682" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2.5H6.5A1.5 1.5 0 0 0 5 4v16a1.5 1.5 0 0 0 1.5 1.5h11A1.5 1.5 0 0 0 19 20V7.5z"/><path d="M14 2.5V7.5H19M8.5 12.5h7M8.5 16.5h5"/></svg>Paper</a></nav></li>
-
-  <li class="pub" id="pub-sampledisco"><h3 class="pub-title">SampleDisco: Harmonizing Single-Cell Data Across Studies and Modalities to Reveal Sample Heterogeneity</h3>
-    <p class="pub-authors"><strong>Hua Jiang</strong>, Z. Ji, Y. Wang, M. Jiang, Y. Man, Hongkai Ji</p>
-    <p class="pub-venue"><span class="chip muted">In preparation</span><span class="pub-kw">Single-cell · Multi-omics integration · Sample embedding</span></p>
-    <p class="pub-tldr">Embeds single-cell samples from different studies in one space without paired measurements, across scRNA-seq, scATAC-seq, and proteomics. Ranks first overall against 12 sample-embedding methods on every paired, unpaired, and single-modality benchmark.</p>
-    <nav class="links sm" aria-label="Project links"><a href="https://github.com/J041120h/SampleDisco" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.2 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.34-5.47-5.96 0-1.32.47-2.39 1.24-3.23-.12-.31-.54-1.53.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.65.24 2.87.12 3.18.77.84 1.24 1.91 1.24 3.23 0 4.63-2.81 5.65-5.49 5.95.43.37.82 1.1.82 2.22v3.29c0 .32.21.7.83.58A12 12 0 0 0 24 12.5C24 5.87 18.63.5 12 .5z"/></svg>Code</a><a href="https://pypi.org/project/sampledisco/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 7.5 12 3 3 7.5v9L12 21l9-4.5z"/><path d="M3 7.5 12 12l9-4.5M12 12v9"/></svg>PyPI</a><a href="https://j041120h.github.io/SampleDisco_tutorial/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 5.5c3-1.3 6.2-1.3 9.5.8 3.3-2.1 6.5-2.1 9.5-.8v13c-3-1.3-6.2-1.3-9.5.8-3.3-2.1-6.5-2.1-9.5-.8z"/><path d="M12 6.3v13"/></svg>Tutorial</a></nav></li>
-
-  <li class="pub" id="pub-chromapilot"><h3 class="pub-title">ChromaPilot: Multi-Agent Platform for Epigenomic Analysis and Discovery</h3>
-    <p class="pub-authors"><strong>Hua Jiang</strong>*, M. Jiang*, Q. You*, Y. Hu, L. Qi, W. Zhou, Hongkai Ji</p>
-    <p class="pub-venue"><span class="chip muted">In preparation</span><span class="pub-kw">LLM agents · Epigenomics · Automated analysis</span></p>
-    <p class="pub-tldr">A multi-agent framework that turns natural-language requests into validated epigenomic analyses. Completes 96–100% of runs across seven tasks, holds up when biologists rephrase the task, and matches expert analyses more reliably than AutoBA, ChatGPT, and Claude Code.</p>
-    <nav class="links sm" aria-label="Project links"><a href="https://github.com/J041120h/ChromaPilot" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.2 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.34-5.47-5.96 0-1.32.47-2.39 1.24-3.23-.12-.31-.54-1.53.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.65.24 2.87.12 3.18.77.84 1.24 1.91 1.24 3.23 0 4.63-2.81 5.65-5.49 5.95.43.37.82 1.1.82 2.22v3.29c0 .32.21.7.83.58A12 12 0 0 0 24 12.5C24 5.87 18.63.5 12 .5z"/></svg>Code</a></nav></li>
-
-  <li class="pub" id="pub-resonate"><h3 class="pub-title">RESONATE: Foundation Model–Guided Cross-Omics Imputation of Missing Features in Spatial Single-Cell Data</h3>
-    <p class="pub-authors"><strong>Hua Jiang</strong>, Hongkai Ji, Uthsav Chitra</p>
-    <p class="pub-venue"><span class="chip muted">In preparation</span><span class="pub-kw">Spatial omics · Foundation models · Imputation</span></p>
-    <p class="pub-tldr">Predicts unmeasured spatial genes and proteins by combining foundation-model gene embeddings with transformer-based spatial attention. Most accurate gene imputation on all ten datasets against 14 published methods; <span class="hl">Second Best Overall Poster</span> at the JHU DSAI Fall 2026 Symposium.</p>
-    <nav class="links sm" aria-label="Project links"><a href="https://drive.google.com/file/d/1xrMdgGxHJmxyZXe3chiOF3fvlTFbjdYs/view?usp=sharing" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M12 16v4M8 21h8M7.5 12l3-3 2.5 2 3.5-3.5"/></svg>Poster</a></nav></li>
 
   <li class="pub" id="pub-hackathon"><h3 class="pub-title"><a href="https://doi.org/10.1088/2632-2153/ae7f6a" target="_blank" rel="noopener noreferrer">Lessons Learned from the 2025 Agentic AI for Science Hackathon</a></h3>
     <p class="pub-authors">Jaehyung Lee, Harichandana Neralla, Charles Rhys Campbell, Kent Zhang, Akshaya Ajith, Justin Ely, <strong>Hua Jiang</strong>, … Kamal Choudhary <span class="nb">(27 authors)</span></p>
@@ -283,13 +264,6 @@ footer{margin-top:32px;padding:24px 0 40px;border-top:1px solid var(--line);font
 </ol>
 <p class="footnote">* Equal contribution</p>
 
-<h3 class="subhead">Ongoing work</h3>
-<ol class="pubs">
-  <li class="pub" id="proj-longcovid"><h3 class="pub-title">Multi-omics Single-Cell Analysis of Long COVID Immune Dysregulation</h3>
-    <p class="pub-authors">with Hongkai Ji, Annie Antar, and Andrea Cox</p>
-    <p class="pub-venue"><span class="chip muted">2025 – present</span><span class="pub-kw">CITE-seq · Pseudobulk DE · Longitudinal PBMC</span></p>
-    <p class="pub-tldr">A longitudinal PBMC pipeline (QC, CITE-seq-guided annotation, subject-level pseudobulk differential expression), with factorial models testing whether Long COVID associations vary with age or BMI.</p></li>
-</ol>
 </section>
 
 <!-- ============================== AWARDS ============================== -->
