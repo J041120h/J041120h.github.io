@@ -131,9 +131,11 @@ h2{font-size:28px;font-weight:600;letter-spacing:-.01em;margin-bottom:20px}
 .news{list-style:none}.news li{display:grid;grid-template-columns:96px 1fr;gap:20px;padding:8px 0;align-items:baseline}
 .news li > span:last-child{text-wrap:pretty}
 .date{font-size:14.5px;color:var(--soft);white-space:nowrap}
-.js .news.collapsed li.more{display:none}
-.more-btn{display:none;margin-top:10px;font:inherit;font-size:14.5px;font-weight:500;color:var(--soft);background:var(--bg-soft);border:0;border-radius:999px;padding:5px 15px;cursor:pointer}
-.more-btn:hover{color:var(--accent);background:var(--tint)}.js .more-btn{display:inline-block}
+.news-scroll{position:relative}
+.news{max-height:17em;overflow-y:auto;padding-right:10px;scrollbar-width:thin;scrollbar-color:var(--line) transparent}
+.news::-webkit-scrollbar{width:6px}.news::-webkit-scrollbar-thumb{background:var(--line);border-radius:3px}
+.news-scroll::after{content:"";position:absolute;left:0;right:10px;bottom:0;height:56px;pointer-events:none;background:linear-gradient(to bottom,transparent,var(--bg));transition:opacity .2s}
+.news-scroll.at-end::after{opacity:0}
 
 /* publications */
 .pubs{list-style:none}
@@ -188,7 +190,7 @@ footer{margin-top:32px;padding:24px 0 40px;border-top:1px solid var(--line);font
 @media (max-width:760px){.bgrid{grid-template-columns:1fr}.hero-text > p{text-align:left}}
 @media (max-width:700px){.brand{display:none}.topnav{margin-left:0;gap:18px;overflow-x:auto;scrollbar-width:none}.topnav::-webkit-scrollbar{display:none}.bar{--navh:56px;height:56px}.theme-btn{margin-left:auto}}
 @media (max-width:560px){body{font-size:16px}.news li{grid-template-columns:1fr;gap:0}.rows li{grid-template-columns:1fr}.terms{text-align:left}.pub-kw{display:block;margin:4px 0 0}.pub{padding:18px}}
-@media print{.topbar,.to-top,.skip,.more-btn{display:none!important}.js .news.collapsed li.more{display:grid}.js .peek-card{display:block;position:static;box-shadow:none;width:100%;margin-top:8px}}
+@media print{.topbar,.to-top,.skip{display:none!important}.news{max-height:none;overflow:visible}.news-scroll::after{display:none}.js .peek-card{display:block;position:static;box-shadow:none;width:100%;margin-top:8px}}
 </style>
 </head>
 <body>
@@ -235,16 +237,15 @@ footer{margin-top:32px;padding:24px 0 40px;border-top:1px solid var(--line);font
 <!-- ============================== NEWS ============================== -->
 <!-- TODO: exact month of the DSAI poster award, if known -->
 <section class="page" id="news"><h2>News</h2>
-<ul class="news collapsed" id="newsList">
+<div class="news-scroll" id="newsScroll"><ul class="news" id="newsList" tabindex="0" aria-label="News, scroll for more">
   <li><span class="date">Dec 2026</span><span>Talk on RESONATE at the JHU GU Oncology Grant Rounds Seminar (Dec 1).</span></li>
   <li><span class="date">Fall 2026</span><span>My RESONATE poster won <a href="https://drive.google.com/file/d/1xrMdgGxHJmxyZXe3chiOF3fvlTFbjdYs/view?usp=sharing" target="_blank" rel="noopener noreferrer">Second Best Overall Poster</a> at the <a href="https://ai.jhu.edu/event/data-science-and-ai-institute-fall-2026-symposium-artificial-intelligence-and-human-learning/" target="_blank" rel="noopener noreferrer">JHU Data Science &amp; AI Institute Fall Symposium</a>.</span></li>
   <li><span class="date">Jul 2026</span><span><a href="https://doi.org/10.1088/2632-2153/ae7f6a" target="_blank" rel="noopener noreferrer">Lessons Learned from the 2025 Agentic AI for Science Hackathon</a> is published in <span class="chip">Machine Learning: Science and Technology</span>.</span></li>
   <li><span class="date">Apr 2026</span><span>Awarded a second Provost's Undergraduate Research Award (PURA), this time for RESONATE.</span></li>
   <li><span class="date">Nov 2025</span><span>My co-first-author paper on <a href="https://doi.org/10.1016/j.fbio.2025.107682" target="_blank" rel="noopener noreferrer">engineering a thermostable glycosyltransferase</a> is published in <span class="chip">Food Bioscience</span>.</span></li>
-  <li class="more"><span class="date">Apr 2025</span><span>Awarded the Provost's Undergraduate Research Award (PURA).</span></li>
-  <li class="more"><span class="date">Sep 2024</span><span>Won <strong>First Place</strong> at HopHacks, the premier hackathon at Johns Hopkins.</span></li>
-</ul>
-<button type="button" class="more-btn" id="newsMore" aria-expanded="false">Show more</button>
+  <li><span class="date">Apr 2025</span><span>Awarded the Provost's Undergraduate Research Award (PURA).</span></li>
+  <li><span class="date">Sep 2024</span><span>Won <strong>First Place</strong> at HopHacks, the premier hackathon at Johns Hopkins.</span></li>
+</ul></div>
 </section>
 
 <!-- ============================== PUBLICATIONS ============================== -->
@@ -334,10 +335,10 @@ footer{margin-top:32px;padding:24px 0 40px;border-top:1px solid var(--line);font
     c.addEventListener('click',function(e){e.stopPropagation();});});
   document.addEventListener('click',closeAll);document.addEventListener('keydown',function(e){if(e.key==='Escape')closeAll();});
 
-  /* news show more */
-  var list=document.getElementById('newsList'),more=document.getElementById('newsMore');
-  if(!list.querySelector('li.more'))more.style.display='none';
-  more.addEventListener('click',function(){var c=list.classList.toggle('collapsed');more.textContent=c?'Show more':'Show less';more.setAttribute('aria-expanded',String(!c));});
+  /* news: hide the bottom fade once the list is scrolled to the end (or doesn't overflow) */
+  var list=document.getElementById('newsList'),nwrap=document.getElementById('newsScroll');
+  function newsFade(){nwrap.classList.toggle('at-end',list.scrollTop+list.clientHeight>=list.scrollHeight-4);}
+  list.addEventListener('scroll',newsFade,{passive:true});addEventListener('resize',newsFade);newsFade();
 
   /* nav highlight + back to top */
   var pages=[].slice.call(document.querySelectorAll('.page')),navs=[].slice.call(document.querySelectorAll('.topnav a')),byId={},toTop=document.getElementById('toTop');
