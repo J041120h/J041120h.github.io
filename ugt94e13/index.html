@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Engineering a thermostable glycosyltransferase | Hua (Harry) Jiang</title>
+<meta name="description" content="Computational design plus structural and conservation filtering turned a fragile stevia-sweetener glycosyltransferase into a variant with a 5.4 &amp;deg;C higher melting temperature, a 14.8&amp;times; longer half-life, while retaining 108% of the parent enzyme&#x27;s activity." />
+<link rel="canonical" href="https://j041120h.github.io/ugt94e13/" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Engineering a thermostable glycosyltransferase" />
+<meta property="og:description" content="Computational design plus structural and conservation filtering turned a fragile stevia-sweetener glycosyltransferase into a variant with a 5.4 &amp;deg;C higher melting temperature, a 14.8&amp;times; longer half-life, while retaining 108% of the parent enzyme&#x27;s activity." />
+<meta property="og:url" content="https://j041120h.github.io/ugt94e13/" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230a4a7a'/%3E%3Ctext x='50' y='67' font-family='Helvetica,Arial,sans-serif' font-size='42' font-weight='600' fill='%23ffffff' text-anchor='middle'%3EHJ%3C/text%3E%3C/svg%3E" />
+<script>
+(function(){var t='light';try{var s=localStorage.getItem('theme');t=s||(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');}catch(e){}
+document.documentElement.setAttribute('data-theme',t);})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/project.css?v=4">
+</head>
+<body>
+<header class="topbar"><div class="bar">
+  <a class="brand" href="../">Hua (Harry) Jiang</a>
+  <a class="home-link" href="../#research"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>All research</a>
+  <button class="theme-btn" id="theme" type="button" aria-label="Toggle color theme" aria-pressed="false"><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.4M12 19.6V22M2 12h2.4M19.6 12H22M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M19.1 4.9l-1.7 1.7M6.6 17.4l-1.7 1.7"/></svg><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.4A8 8 0 0 1 9.6 4 7 7 0 1 0 20 14.4Z"/></svg></button>
+</div></header>
+
+<main>
+  <div class="eyebrow">Research · Protein engineering</div>
+  <h1 class="long">Improving the thermostability of glycosyltransferase UGT94E13 by rational design for highly efficient biosynthesis of rebaudioside M8</h1>
+  <p class="authors"><strong>Hua Jiang</strong>*, Guangyao Li*, Weilun Zhang, Zhiwei Deng, Mengliang Yang, Changmei Liu, Zhengshan Luo, Yan Zhang, Yijian Rao, Zhenbo Yuan</p>
+  <div class="author-notes">* These authors contributed equally to this work.</div><div class="venue"><span class="chip">Food Bioscience 73, 107682 (2025)</span></div>
+  <nav class="links" aria-label="Links"><a class="primary" href="https://doi.org/10.1016/j.fbio.2025.107682" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2.5H6.5A1.5 1.5 0 0 0 5 4v16a1.5 1.5 0 0 0 1.5 1.5h11A1.5 1.5 0 0 0 19 20V7.5z"/><path d="M14 2.5V7.5H19M8.5 12.5h7M8.5 16.5h5"/></svg>Paper</a></nav>
+  <div class="tldr"><div class="eyebrow">In short</div><p>Rebaudioside M8 is a stevia-derived sweetener made by a single enzyme, the glycosyltransferase UGT94E13, whose best catalytic variant falls apart in under an hour at process temperature. Computational design tools proposed candidate mutations, structural and conservation filters cut them to twelve worth building, and a four-mutation variant raised the melting temperature by 5.4 &deg;C and the half-life at 45 &deg;C by 14.8&times; while keeping 108&nbsp;% of parent activity. In a six-hour coupled reaction it produced 35.30&nbsp;g/L of rebaudioside M8, against 31.28&nbsp;g/L for the parent enzyme.</p></div>
+  <div class="stats"><div class="stat"><div class="stat-v">+5.4 °C</div><div class="stat-k">melting temperature of the best variant, M5</div></div><div class="stat"><div class="stat-v">14.8×</div><div class="stat-k">longer half-life at 45 °C (0.60 h to 8.89 h)</div></div><div class="stat"><div class="stat-v">35.30 g/L</div><div class="stat-k">rebaudioside M8 from a 6 h fed-batch cascade</div></div></div>
+  <section>
+    <h2>The problem</h2>
+    <p>Steviol glycosides are the sweet compounds of the stevia plant (<em>Stevia rebaudiana</em>): a rigid diterpene core carrying several sugar chains. More than 60 of them are known, and the pattern of attached sugars decides how sweet each one tastes and how much bitterness or metallic aftertaste it carries. <strong>Rebaudioside M8</strong> (Reb M8) is a semi-synthetic member of this family, made from the natural glycoside rebaudioside D by attaching one more glucose. It is about as sweet as the widely used rebaudioside M, has a cleaner taste profile than rebaudioside D or A, and also inhibits the inflammatory factor TNF-&alpha;.</p>
+    <p>Reb M8 does not occur in the plant in useful amounts, so it is made enzymatically. The enzyme that does this is a <strong>glycosyltransferase</strong> &mdash; an enzyme that moves a sugar from an activated donor molecule onto a specific hydroxyl group of an acceptor. Here, UGT94E13 takes glucose from UDP-glucose (UDPG) and attaches it to rebaudioside D.</p>
+    <p>An engineered double mutant of this enzyme, UGT94E13-F169G/I185G (called <strong>M0</strong>), is catalytically efficient but thermally fragile: its melting temperature (T<sub>m</sub>, the point at which the folded protein comes apart) is 49.08&nbsp;&deg;C, and at 45&nbsp;&deg;C it loses half its activity in 0.60&nbsp;h. That is a practical problem rather than an academic one. Industrial biocatalysis runs warm, because higher temperature means faster reactions, more soluble substrate and less microbial contamination, and it runs for hours per batch. An enzyme that dies within the first hour forces lower temperatures, much more enzyme per batch, or repeated re-dosing &mdash; all of which show up directly in cost.</p>
+    <p>The usual obstacle is that stability and activity pull against each other. Mutations that stiffen a protein against unfolding often also stiffen the active site, and the catalytic rate drops. This is the activity&ndash;stability trade-off the study set out to avoid.</p>
+  </section>
+  <section>
+    <h2>The key idea</h2>
+    <p>Rather than screen a large random library, the study used computational design to propose a small set of point mutations and then filtered that set hard on structural and evolutionary grounds before anything was built in the lab.</p>
+    <ul class="points"><li>Two automated design servers, <strong>PROSS</strong> and <strong>FireProt</strong>, which combine force-field energy calculations with statistics from multiple sequence alignments, proposed 40 and 51 candidate mutations of M0 respectively.</li><li>The two lists were <strong>intersected</strong>, keeping only positions both methods agreed on.</li><li>Any mutation lying closer than 8&nbsp;&Aring; to the catalytic pocket was removed, on the grounds that it could disturb catalysis.</li><li>Positions that evolutionary conservation analysis (ConSurf) scored above conservation grade 8 were removed, since highly conserved residues usually matter for function.</li><li>What survived was a list of <strong>12 single-point mutants</strong> to express and measure.</li></ul>
+    <p>The three-dimensional structure used throughout &mdash; for the distance filter, for the later mechanistic analysis and for the simulations &mdash; was an AlphaFold3 model of UGT94E13, with the top-confidence prediction selected.</p>
+  </section>
+  <section>
+    <h2>How it works</h2>
+    <figure class="fig" style="--figw:900px"><a href="figs/overview.webp" target="_blank" rel="noopener noreferrer" title="Open full size"><img src="figs/overview.webp" width="1758" height="1174" alt="Three-panel figure showing the chemical conversion of rebaudioside D to rebaudioside M8, a flow chart of the mutation design pipeline, and a protein ribbon structure with twelve labelled residues." loading="lazy"></a><figcaption>UGT94E13 attaches one extra glucose unit to rebaudioside D to give rebaudioside M8 (the added sugar is drawn in red). The funnel below shows the design pipeline: 40 PROSS and 51 FireProt proposals, intersected and then filtered by distance from the active site and by evolutionary conservation, leave 12 single-point mutants to test, of which 4 end up in the final variant. Those four positions are labelled in red on the structure. Reproduced from Jiang et al., Food Bioscience 73, 107682 (2025); © 2025 Elsevier Ltd.</figcaption></figure>
+    <p>Each of the 12 designs was introduced by overlap-extension PCR, confirmed by Sanger sequencing, expressed in <em>Escherichia coli</em> BL21(DE3) and purified on a nickel affinity column. The purified enzymes were then characterised on four axes: melting temperature by differential scanning calorimetry; relative activity, measured as the amount of Reb M8 formed from rebaudioside D and UDPG and quantified by liquid chromatography; optimal reaction temperature and pH; and half-life at 45&nbsp;&deg;C.</p>
+    <p>Mutations were kept only if they passed both tests &mdash; a T<sub>m</sub> gain above 1&nbsp;&deg;C <em>and</em> at least 90&nbsp;% of the parent's activity. The survivors were then stacked one at a time in order of their individual T<sub>m</sub> gain, a greedy combination strategy, giving combinatorial variants M1 through M5.</p>
+  </section>
+  <section>
+    <h2>What it found</h2>
+    <p>Eleven of the twelve single mutants raised T<sub>m</sub>; only N271E did not. Five gained more than 1&nbsp;&deg;C: F208Y (+2.75&nbsp;&deg;C), T102D (+1.41), V110I (+1.31), P57L (+1.04) and N251E (+1.03). P57L was dropped because its activity fell to 59&nbsp;% of the parent; the other four retained 94&ndash;105&nbsp;%.</p>
+    <p>The quadruple variant <strong>M5</strong> (M0 plus T102D/V110I/F208Y/N251E) was the best of the combinations: T<sub>m</sub> up 5.40&nbsp;&deg;C, optimal reaction temperature up from 35 to 40&nbsp;&deg;C, and half-life at 45&nbsp;&deg;C of 8.89&nbsp;h against 0.60&nbsp;h for M0, a 14.8-fold extension. Its relative activity was 108&nbsp;% of M0. Stacking was not automatically additive: M1 and M3 were also more stable but kept only 60&nbsp;% and 74&nbsp;% of parent activity.</p>
+    <figure class="fig" style="--figw:1080px"><a href="figs/stability.webp" target="_blank" rel="noopener noreferrer" title="Open full size"><img src="figs/stability.webp" width="1800" height="652" alt="Two plots: log-linear thermal inactivation curves for six enzyme variants over time, and substrate saturation curves for the parent enzyme M0 and the variant M5." loading="lazy"></a><figcaption>Panels C and D of Figure 2. On the left, enzymes are held at 45 &deg;C and their remaining activity tracked: the parent M0 (black, steepest line) is half dead in 0.60 h, while the quadruple variant M5 (red, shallowest line) takes 8.89 h. On the right, the saturation curves show M5 keeps the parent's turnover number but needs more substrate to reach the same rate. Reproduced from Jiang et al., Food Bioscience 73, 107682 (2025); © 2025 Elsevier Ltd.</figcaption></figure>
+    <p>Steady-state kinetics showed where the cost landed. The turnover number k<sub>cat</sub> was unchanged (0.239&nbsp;min<sup>&minus;1</sup> for both enzymes), but the Michaelis constant K<sub>m</sub> for rebaudioside D rose from 0.215 to 0.393&nbsp;mmol/L &mdash; the more rigid variant binds its substrate less tightly, even though its measured activity under assay conditions was slightly higher.</p>
+    <p>Structural comparison attributed the stability gain to four different physical effects, one per mutation, spread over the protein rather than concentrated in one region.</p>
+    <figure class="fig" style="--figw:1080px"><a href="figs/mechanism.webp" target="_blank" rel="noopener noreferrer" title="Open full size"><img src="figs/mechanism.webp" width="1686" height="644" alt="Four pairs of close-up protein structure views comparing the original and mutated residue at positions 102, 110, 208 and 251." loading="lazy"></a><figcaption>Each pair compares the parent enzyme (left, cyan) with variant M5 (right, grey). The four mutations work through four different mechanisms: T102D forms a new salt bridge to K125 (3.2 &Aring;), V110I packs a bulkier hydrophobic side chain into the core, F208Y adds a hydrogen bond to E158 (1.4 &Aring;), and N251E extends a negatively charged patch on the surface. Reproduced from Jiang et al., Food Bioscience 73, 107682 (2025); © 2025 Elsevier Ltd.</figcaption></figure>
+    <p>100&nbsp;ns molecular dynamics simulations of M0 and M5, each with UDPG and rebaudioside D bound, supported this. Both systems equilibrated, and M5 showed consistently lower root-mean-square fluctuation per residue, meaning less local motion. Two catalytically relevant distances also shortened in M5: from His13 N&epsilon; to the rebaudioside D C6 hydroxyl hydrogen, 6.05&nbsp;&Aring; down to 5.00&nbsp;&Aring;; and from the UDPG anomeric carbon to that same oxygen, 7.83&nbsp;&Aring; down to 4.74&nbsp;&Aring;. A geometry closer to the reactive arrangement offers a reason why activity rose rather than fell.</p>
+  </section>
+  <section>
+    <h2>Why it matters</h2>
+    <p>The practical test was a two-enzyme cascade. UDP-glucose is expensive to supply stoichiometrically, so sucrose synthase AtSuSy from <em>Arabidopsis thaliana</em> was co-expressed to regenerate it from cheap sucrose, and the reaction conditions were optimised to pH 7.5 in potassium phosphate, 45&nbsp;&deg;C and 500&nbsp;mmol/L sucrose.</p>
+    <figure class="fig" style="--figw:900px"><a href="figs/production.webp" target="_blank" rel="noopener noreferrer" title="Open full size"><img src="figs/production.webp" width="934" height="619" alt="Line plot of rebaudioside M8 concentration over six hours for the parent enzyme M0 and the engineered variant M5." loading="lazy"></a><figcaption>Panel D of Figure 5. In the coupled reaction with sucrose synthase, the parent M0 (black) stops producing after about 2 h, while M5 (red) keeps going to 5 h and reaches a final titer of 35.30 g/L against 31.28 g/L. The gap is purely a matter of how long each enzyme survives at 45 &deg;C. Reproduced from Jiang et al., Food Bioscience 73, 107682 (2025); © 2025 Elsevier Ltd.</figcaption></figure>
+    <p>Over a 6&nbsp;h fed-batch run the two enzymes diverge exactly where thermostability predicts. M0 begins losing activity between 0.5 and 2&nbsp;h and flatlines at 31.28&nbsp;g/L. M5 matches it for the first hour, then continues at a slower rate out to 5&nbsp;h and finishes at 35.30&nbsp;g/L &mdash; roughly a 2.5-fold longer productive lifetime.</p>
+    <p>The broader point is methodological. A computational pipeline that proposes many mutations is only useful if the ones you actually build are likely to work; intersecting two independent predictors and then removing anything near the active site or evolutionarily conserved cut the experimental burden to twelve constructs and still produced a variant that gains stability while keeping its measured activity.</p>
+  </section>
+  <section>
+    <h2>Cite</h2>
+    <div class="bib"><button type="button" class="copy-btn" id="copyBib">Copy</button><pre id="bibText">@article{jiang2025ugt94e13,
+  title   = {Improving the thermostability of glycosyltransferase UGT94E13 by rational design for highly efficient biosynthesis of rebaudioside M8},
+  author  = {Jiang, Hua and Li, Guangyao and Zhang, Weilun and Deng, Zhiwei and Yang, Mengliang and Liu, Changmei and Luo, Zhengshan and Zhang, Yan and Rao, Yijian and Yuan, Zhenbo},
+  journal = {Food Bioscience},
+  volume  = {73},
+  pages   = {107682},
+  year    = {2025},
+  issn    = {2212-4292},
+  doi     = {10.1016/j.fbio.2025.107682}
+}</pre></div>
+  </section>
+</main>
+
+<footer><span>Hua (Harry) Jiang · Johns Hopkins University</span><a href="../">More about me →</a></footer>
+
+<script>
+(function(){
+  var root=document.documentElement,btn=document.getElementById('theme');
+  btn.setAttribute('aria-pressed',String(root.getAttribute('data-theme')==='dark'));
+  btn.addEventListener('click',function(){var n=root.getAttribute('data-theme')==='dark'?'light':'dark';root.setAttribute('data-theme',n);btn.setAttribute('aria-pressed',String(n==='dark'));try{localStorage.setItem('theme',n);}catch(e){}});
+  /* opened from disk: folder links need an explicit index.html */
+  if(location.protocol==='file:'){document.querySelectorAll('a[href]').forEach(function(a){var h=a.getAttribute('href');if(/^([a-z]+:|#|\/\/)/i.test(h))return;var i=h.indexOf('#'),p=i<0?h:h.slice(0,i),r=i<0?'':h.slice(i);if(/\/$/.test(p))a.setAttribute('href',p+'index.html'+r);});}
+  var am=document.getElementById('authorsMore');
+  if(am){am.addEventListener('click',function(){am.previousElementSibling.hidden=false;am.remove();});}
+  var cb=document.getElementById('copyBib');
+  if(cb&&navigator.clipboard){cb.addEventListener('click',function(){navigator.clipboard.writeText(document.getElementById('bibText').textContent).then(function(){cb.textContent='Copied!';setTimeout(function(){cb.textContent='Copy';},1500);});});}
+})();
+</script>
+</body>
+</html>

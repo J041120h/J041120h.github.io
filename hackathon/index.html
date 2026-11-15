@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lessons from the 2025 Agentic AI for Science Hackathon | Hua (Harry) Jiang</title>
+<meta name="description" content="Design and lessons of a hackathon with 352 registered participants, who built tool-calling AI agents for scientific tasks, from database and literature queries to math problems, and probed where language-only chatbots fail." />
+<link rel="canonical" href="https://j041120h.github.io/hackathon/" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Lessons from the 2025 Agentic AI for Science Hackathon" />
+<meta property="og:description" content="Design and lessons of a hackathon with 352 registered participants, who built tool-calling AI agents for scientific tasks, from database and literature queries to math problems, and probed where language-only chatbots fail." />
+<meta property="og:url" content="https://j041120h.github.io/hackathon/" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230a4a7a'/%3E%3Ctext x='50' y='67' font-family='Helvetica,Arial,sans-serif' font-size='42' font-weight='600' fill='%23ffffff' text-anchor='middle'%3EHJ%3C/text%3E%3C/svg%3E" />
+<script>
+(function(){var t='light';try{var s=localStorage.getItem('theme');t=s||(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');}catch(e){}
+document.documentElement.setAttribute('data-theme',t);})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/project.css?v=4">
+</head>
+<body>
+<header class="topbar"><div class="bar">
+  <a class="brand" href="../">Hua (Harry) Jiang</a>
+  <a class="home-link" href="../#research"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>All research</a>
+  <button class="theme-btn" id="theme" type="button" aria-label="Toggle color theme" aria-pressed="false"><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.4M12 19.6V22M2 12h2.4M19.6 12H22M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M19.1 4.9l-1.7 1.7M6.6 17.4l-1.7 1.7"/></svg><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.4A8 8 0 0 1 9.6 4 7 7 0 1 0 20 14.4Z"/></svg></button>
+</div></header>
+
+<main>
+  <div class="eyebrow">Research · Agentic AI</div>
+  <h1 class="long">Lessons learned from the 2025 agentic AI for science hackathon</h1>
+  <p class="authors">Jaehyung Lee, Harichandana Neralla, Charles Rhys Campbell, Kent Zhang, Akshaya Ajith, Justin Ely, <strong>Hua Jiang</strong><span class="authors-rest" hidden>, Zhijian Zhou, Nikhil Ramlukan, Xiaolong Li, Huat Thart Chiang, Arijit Mahesh Kulkarni, Amruthesh Thirumalaiswamy, Sampanna Pahi, Md Habibur Rahman, Raghunandan Pratoori, Erwei Huang, Asif Iqbal Bhatti, Prem Prabhakaran, Manish Kumar, Aldo H Romero, Yu Sun, Christopher Stiles, Chinmay Maheshwari, Peirong Liu, Laixi Shi, Kamal Choudhary</span> <button type="button" class="authors-more" id="authorsMore">and 20 more</button></p>
+  <div class="venue"><span class="chip">Machine Learning: Science and Technology 7, 040501 (2026)</span></div>
+  <nav class="links" aria-label="Links"><a class="primary" href="https://doi.org/10.1088/2632-2153/ae7f6a" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2.5H6.5A1.5 1.5 0 0 0 5 4v16a1.5 1.5 0 0 0 1.5 1.5h11A1.5 1.5 0 0 0 19 20V7.5z"/><path d="M14 2.5V7.5H19M8.5 12.5h7M8.5 16.5h5"/></svg>Paper</a><a href="https://github.com/atomgptlab/aai4science" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.2 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.34-5.47-5.96 0-1.32.47-2.39 1.24-3.23-.12-.31-.54-1.53.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.65.24 2.87.12 3.18.77.84 1.24 1.91 1.24 3.23 0 4.63-2.81 5.65-5.49 5.95.43.37.82 1.1.82 2.22v3.29c0 .32.21.7.83.58A12 12 0 0 0 24 12.5C24 5.87 18.63.5 12 .5z"/></svg>Hackathon repo</a></nav>
+  <div class="tldr"><div class="eyebrow">In short</div><p>AI agents that plan, call external tools and act on the results are increasingly proposed for science, but standard benchmarks say little about how they behave in realistic workflows. This paper documents the Agentic AI for Science Hackathon 2025, where 352 registered participants built tool-calling agents on a shared, open AtomGPT.org API across seven scientific tasks. Among 42 scored notebooks, completion fell from 92.9% on the first tool-grounded task to 33.3% on the final open-ended design task, and the organizers distil practical lessons for agent design, such as enforcing tool schemas and handing arithmetic to tools.</p></div>
+  <div class="stats"><div class="stat"><div class="stat-v">352</div><div class="stat-k">registered participants in the 2025 hackathon</div></div><div class="stat"><div class="stat-v">42</div><div class="stat-k">participant notebooks scored by the organizers</div></div><div class="stat"><div class="stat-v">92.9% → 33.3%</div><div class="stat-k">completion, first task (weather tool) to last (open-ended agent design)</div></div></div>
+  <section>
+    <h2>The problem</h2>
+    <p>Scientific work increasingly means coordinating many separate resources: simulation codes, materials databases, literature archives and machine-learning models. <strong>Agentic AI</strong> describes systems in which a language model does not just answer a prompt but plans a sequence of steps, calls external tools (a database query, a literature search, a calculator) and folds the returned results back into its reasoning.</p>
+    <p>Most benchmarks for language models measure narrow targets such as question-answering accuracy or code-generation success. They say little about whether an agent calls the right tool, recovers from errors, keeps its intermediate steps transparent, and produces results someone else can reproduce. The paper argues that hackathons, with open-ended and time-limited problems, can complement such benchmarks.</p>
+    <p>The paper also separates three modes of use that are often conflated under “AI for science”: language-only models used through a chat interface (the paper’s meaning of “chatbots”), <em>agent-mediated workflows</em> that wrap a model in a tool-calling execution layer, and retrieval- or code-augmented models in between. The hackathon concerns the second mode.</p>
+    <figure class="fig" style="--figw:520px"><a href="figs/hierarchy.webp" target="_blank" rel="noopener noreferrer" title="Open full size"><img src="figs/hierarchy.webp" width="854" height="856" alt="Nested circles labelled Artificial Intelligence, Machine Learning, Deep Learning, Generative AI and, at the centre, Agentic AI, described as plans and acts through tool calling and MCP." loading="lazy"></a><figcaption>The paper places agentic AI at the core of a nested hierarchy: generative models create content in response to a prompt, while agentic systems also plan and act, for example by calling tools or using the model context protocol (MCP), a standard interface for connecting models to external tools. Figure from Lee et al., Mach. Learn.: Sci. Technol. (2026), CC BY 4.0.</figcaption></figure>
+  </section>
+  <section>
+    <h2>How the hackathon was set up</h2>
+    <p>The Agentic AI for Science Hackathon 2025 drew 352 registered participants with backgrounds in materials science, physics, computer science and engineering. Everyone worked against the same open AtomGPT.org API (AGAPI), which follows the OpenAI interface. Because any compatible model can be swapped in by changing the base URL and key, the setup is model-agnostic, so differences between submissions reflect agent design rather than plumbing.</p>
+    <p>Tool use rests on <em>function calling</em>. At each step the model receives the request plus tool descriptions in JSON Schema and returns either an answer or a structured request to call a tool. A “Runner” executes the tool, feeds the result back, and repeats this plan&ndash;execute&ndash;observe loop until the model answers. Guided Jupyter notebooks demonstrated the pattern, letting participants focus on agent behaviour instead of setup.</p>
+    <figure class="fig" style="--figw:720px"><a href="figs/agent.webp" target="_blank" rel="noopener noreferrer" title="Open full size"><img src="figs/agent.webp" width="1057" height="974" alt="Python code that configures an OpenAI-compatible client for the AtomGPT.org API, registers a get_weather function as a tool, runs an agent on a weather question, and prints a debug line followed by the agent&#x27;s formatted answer." loading="lazy"></a><figcaption>Panel a of Figure 2. A guided-notebook example: a client points at the AtomGPT.org API, a Python function is registered as a tool, and a Runner executes the agent on a question. The printed “[debug]” line shows that the tool was actually called before the model composed its answer. Figure from Lee et al., Mach. Learn.: Sci. Technol. (2026), CC BY 4.0.</figcaption></figure>
+  </section>
+  <section>
+    <h2>Seven tasks, three kinds of skill</h2>
+    <p>The tasks were deliberately heterogeneous and presented in a fixed order:</p>
+    <ul class="points"><li><strong>Tool-grounded retrieval (T1&ndash;T3):</strong> report the current weather in Baltimore via a weather tool; report the total number of materials in the JARVIS-DFT database via a query tool; fetch the 10 most recent arXiv papers on the compound MgB<sub>2</sub>.</li><li><strong>Reasoning (T4&ndash;T6):</strong> an algebra problem with answer 240; the expected number of regions that 27 chords divide a disk into (answer 204); and a constrained min&ndash;max optimization whose correct solution lies on the boundary rather than where the gradient is zero.</li><li><strong>Open-ended design (T7):</strong> identify real cases where chatbots fail and propose a tool-based agent to fix each one.</li></ul>
+    <p>T1&ndash;T6 were judged against ground-truth answers; T7 was judged against a rubric (a clear failure mode, a sound diagnosis, a plausible fix) rather than a numeric score. The reasoning tasks were chosen so that a single slip, such as a sign error or an unjustified modelling assumption, yields a wrong final answer.</p>
+  </section>
+  <section>
+    <h2>What it found</h2>
+    <p>Of the 352 registered participants, 42 submitted notebooks that the organizers scored. Completion was highest on the tool-grounded tasks and fell steadily through the sequence:</p>
+    <ul class="points"><li>Tool-grounded: T1 weather 39 of 42 (92.9%), T2 database 37 (88.1%), T3 literature 35 (83.3%).</li><li>Reasoning: T4 algebra 25 (59.5%), T5 disk regions 20 (47.6%), T6 optimization 16 (38.1%).</li><li>Open-ended design: T7 14 (33.3%).</li><li>Most participants completed between three and seven tasks; completions clustered at roughly 50&ndash;60 minutes, with a long tail of later finishers.</li></ul>
+    <figure class="fig" style="--figw:900px"><a href="figs/completion.webp" target="_blank" rel="noopener noreferrer" title="Open full size"><img src="figs/completion.webp" width="1277" height="732" alt="Bar chart of the percentage of participants completing each task, declining from about 93% for T1 to about 33% for T7, with bars coloured by task category." loading="lazy"></a><figcaption>Panel b of Figure 7. Share of the 42 scored participants who completed each task, coloured by category. Completion falls from the tool-grounded tasks (T1–T3) through the reasoning tasks (T4–T6) to open-ended agent design (T7); the authors attribute this mainly to the fixed task order and scaffolding, not to differences in agent capability. Figure from Lee et al., Mach. Learn.: Sci. Technol. (2026), CC BY 4.0.</figcaption></figure>
+    <p>The authors caution against reading these numbers as a measure of model capability. The order was fixed, the first three tasks had scaffolded notebooks in which running the demonstrated call could count as a completion, the hybrid event was time-bound, and each participant’s choice of model and prompting was not recorded. “Not completed” lumps together wrong answers, errors and unattempted tasks.</p>
+  </section>
+  <section>
+    <h2>Lessons for agent design</h2>
+    <p>From reading the submitted notebooks, the organizers drew three qualitative observations:</p>
+    <ul class="points"><li><strong>Enforce schemas.</strong> In T2, notebooks that constrained the agent to a specific database schema did not hallucinate statistics, while notebooks without that constraint did. Tools that raise hard errors on bad API syntax put the error in front of the agent, letting it correct itself.</li><li><strong>Give metadata its own tool.</strong> In T3, agents that handled search results as undifferentiated text tended to present older papers as recent or to summarize content they never retrieved; a dedicated tool that separated structured metadata from prose tended to avoid this.</li><li><strong>Externalize intermediate state.</strong> In T4&ndash;T6, submissions that tracked constraints explicitly or called a computational tool for arithmetic were less prone to small slips propagating into wrong answers. The authors stress this is not a general verdict on language-only reasoning: current reasoning-enabled chatbots solve these problems directly.</li></ul>
+    <p>Task 7 answers ranged from factual retrieval and numerical computation to literature synthesis and decision-making under uncertainty. The strongest recognized that reliability usually improves by changing how an agent executes, not by better prompting alone. Sixteen participants consented to sharing their notebooks, which include ideas such as an orchestrator agent over expert agents and a planner/researcher/critic design with memory.</p>
+  </section>
+  <section>
+    <h2>Why it matters</h2>
+    <p>Hackathons test things static benchmarks rarely reach: execution stability, failure recovery, transparency of intermediate steps and reproducibility under realistic constraints. The shared open API and guided notebooks also lowered the barrier for participants from graduate students to faculty.</p>
+    <p>The 2025 event used one participant driving one agent. The authors outline extensions along two separate axes, human teams and multi-agent systems, plus domain tracks such as agent-driven crystal-structure search, arXiv literature triage and interpreting X-ray diffraction patterns. They also propose an instrumented follow-up that records the model, settings, prompts and attempts for every task, so that future events can support controlled capability claims.</p>
+  </section>
+  <section>
+    <h2>Cite</h2>
+    <div class="bib"><button type="button" class="copy-btn" id="copyBib">Copy</button><pre id="bibText">@article{lee2026lessons,
+  title     = {Lessons learned from the 2025 agentic {AI} for science hackathon},
+  author    = {Lee, Jaehyung and Neralla, Harichandana and Campbell, Charles Rhys and Zhang, Kent and Ajith, Akshaya and Ely, Justin and Jiang, Hua and Zhou, Zhijian and Ramlukan, Nikhil and Li, Xiaolong and Chiang, Huat Thart and Kulkarni, Arijit Mahesh and Thirumalaiswamy, Amruthesh and Pahi, Sampanna and Rahman, Md Habibur and Pratoori, Raghunandan and Huang, Erwei and Bhatti, Asif Iqbal and Prabhakaran, Prem and Kumar, Manish and Romero, Aldo H and Sun, Yu and Stiles, Christopher and Maheshwari, Chinmay and Liu, Peirong and Shi, Laixi and Choudhary, Kamal},
+  journal   = {Machine Learning: Science and Technology},
+  volume    = {7},
+  pages     = {040501},
+  year      = {2026},
+  publisher = {IOP Publishing},
+  doi       = {10.1088/2632-2153/ae7f6a}
+}</pre></div>
+  </section>
+</main>
+
+<footer><span>Hua (Harry) Jiang · Johns Hopkins University</span><a href="../">More about me →</a></footer>
+
+<script>
+(function(){
+  var root=document.documentElement,btn=document.getElementById('theme');
+  btn.setAttribute('aria-pressed',String(root.getAttribute('data-theme')==='dark'));
+  btn.addEventListener('click',function(){var n=root.getAttribute('data-theme')==='dark'?'light':'dark';root.setAttribute('data-theme',n);btn.setAttribute('aria-pressed',String(n==='dark'));try{localStorage.setItem('theme',n);}catch(e){}});
+  /* opened from disk: folder links need an explicit index.html */
+  if(location.protocol==='file:'){document.querySelectorAll('a[href]').forEach(function(a){var h=a.getAttribute('href');if(/^([a-z]+:|#|\/\/)/i.test(h))return;var i=h.indexOf('#'),p=i<0?h:h.slice(0,i),r=i<0?'':h.slice(i);if(/\/$/.test(p))a.setAttribute('href',p+'index.html'+r);});}
+  var am=document.getElementById('authorsMore');
+  if(am){am.addEventListener('click',function(){am.previousElementSibling.hidden=false;am.remove();});}
+  var cb=document.getElementById('copyBib');
+  if(cb&&navigator.clipboard){cb.addEventListener('click',function(){navigator.clipboard.writeText(document.getElementById('bibText').textContent).then(function(){cb.textContent='Copied!';setTimeout(function(){cb.textContent='Copy';},1500);});});}
+})();
+</script>
+</body>
+</html>

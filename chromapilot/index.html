@@ -4,16 +4,13 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>ChromaPilot | Hua (Harry) Jiang</title>
-<meta name="description" content="ChromaPilot turns natural-language requests into validated epigenomic analyses, scripts, and reports." />
-<!-- Unlisted project page: reachable by link (e.g. from the CV), kept out of search results.
-     When the paper or preprint is out, replace this file with a redirect page pointing to it; keep this URL alive. -->
+<meta name="description" content="A multi-agent system that turns plain-language requests into reproducible analyses of multiplexed chromatin data by routing work through expert-curated tools and their dependency graph. It completed 96–100% of runs on seven standardized tasks and agreed with expert analyses more consistently than general-purpose agents." />
 <meta name="robots" content="noindex" />
 <link rel="canonical" href="https://j041120h.github.io/chromapilot/" />
-<meta property="og:type" content="website" />
-<meta property="og:title" content="ChromaPilot: A multi-agent platform for epigenomic analysis and discovery" />
-<meta property="og:description" content="ChromaPilot turns natural-language requests into validated epigenomic analyses, scripts, and reports." />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="ChromaPilot" />
+<meta property="og:description" content="A multi-agent system that turns plain-language requests into reproducible analyses of multiplexed chromatin data by routing work through expert-curated tools and their dependency graph. It completed 96–100% of runs on seven standardized tasks and agreed with expert analyses more consistently than general-purpose agents." />
 <meta property="og:url" content="https://j041120h.github.io/chromapilot/" />
-<meta property="og:image" content="https://j041120h.github.io/assets/profile.jpg" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230a4a7a'/%3E%3Ctext x='50' y='67' font-family='Helvetica,Arial,sans-serif' font-size='42' font-weight='600' fill='%23ffffff' text-anchor='middle'%3EHJ%3C/text%3E%3C/svg%3E" />
 <script>
 (function(){var t='light';try{var s=localStorage.getItem('theme');t=s||(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');}catch(e){}
@@ -22,43 +19,76 @@ document.documentElement.setAttribute('data-theme',t);})();
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/project.css?v=1">
+<link rel="stylesheet" href="../assets/project.css?v=4">
 </head>
 <body>
 <header class="topbar"><div class="bar">
-  <a class="brand" href="/">Hua (Harry) Jiang</a>
-  <a class="home-link" href="/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Homepage</a>
+  <a class="brand" href="../">Hua (Harry) Jiang</a>
+  <a class="home-link" href="../#research"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>All research</a>
   <button class="theme-btn" id="theme" type="button" aria-label="Toggle color theme" aria-pressed="false"><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.4M12 19.6V22M2 12h2.4M19.6 12H22M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M19.1 4.9l-1.7 1.7M6.6 17.4l-1.7 1.7"/></svg><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.4A8 8 0 0 1 9.6 4 7 7 0 1 0 20 14.4Z"/></svg></button>
 </div></header>
 
 <main>
-  <div class="eyebrow">Research project · AI agents for science</div>
+  <div class="eyebrow">Research · Agentic bioinformatics</div>
   <h1>ChromaPilot</h1>
-  <p class="subtitle">A multi-agent platform for epigenomic analysis and discovery</p>
-  <p class="people"><strong><a href="/" style="color:inherit">Hua (Harry) Jiang</a></strong> (co-lead, with M. Jiang and Q. You) · Advisor: <a href="https://publichealth.jhu.edu/faculty/1943/hongkai-ji" target="_blank" rel="noopener noreferrer">Prof. Hongkai Ji</a></p>
-  <nav class="links" aria-label="Project links"><a class="primary" href="https://github.com/J041120h/ChromaPilot" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.2 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.34-5.47-5.96 0-1.32.47-2.39 1.24-3.23-.12-.31-.54-1.53.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.65.24 2.87.12 3.18.77.84 1.24 1.91 1.24 3.23 0 4.63-2.81 5.65-5.49 5.95.43.37.82 1.1.82 2.22v3.29c0 .32.21.7.83.58A12 12 0 0 0 24 12.5C24 5.87 18.63.5 12 .5z"/></svg>Code</a></nav>
+  <p class="subtitle">A Domain-Guided Multi-Agent Framework for Reproducible Multimodal Epigenomic Analysis</p>
+  <p class="authors"><strong>Hua Jiang</strong>*, M. Jiang*, Q. You*, Y. Hu, L. Qi, W. Zhou, <a href="https://publichealth.jhu.edu/faculty/1943/hongkai-ji" target="_blank" rel="noopener noreferrer">Hongkai Ji</a></p>
+  <div class="author-notes">* Equal contribution</div>
+  <nav class="links" aria-label="Links"><a class="primary" href="https://github.com/J041120h/ChromaPilot" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.2 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.34-5.47-5.96 0-1.32.47-2.39 1.24-3.23-.12-.31-.54-1.53.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.65.24 2.87.12 3.18.77.84 1.24 1.91 1.24 3.23 0 4.63-2.81 5.65-5.49 5.95.43.37.82 1.1.82 2.22v3.29c0 .32.21.7.83.58A12 12 0 0 0 24 12.5C24 5.87 18.63.5 12 .5z"/></svg>Code</a></nav>
+  <div class="tldr"><div class="eyebrow">In short</div><p>New multiplexed chromatin assays such as Hi-Plex CUT&amp;Tag and ChIP-DIP need assay-specific processing that general-purpose AI agents struggle to get right. ChromaPilot binds a large-language-model multi-agent system to an expert-curated toolkit and a graph of which tool feeds which, and writes new code only on top of validated outputs. On seven standardized tasks run 25 times each it completed 96–100% of runs, and it agreed with expert reference analyses more consistently overall than Claude Code, ChatGPT or AutoBA.</p></div>
+  <div class="stats"><div class="stat"><div class="stat-v">96–100%</div><div class="stat-k">runs completed on each of seven standardized tasks (25 runs each)</div></div><div class="stat"><div class="stat-v">1.00 vs 0.94</div><div class="stat-k">mean agreement with expert references vs best Claude Code setup</div></div><div class="stat"><div class="stat-v">7 biologists</div><div class="stat-k">wrote their own prompts; 90–100% success on standardized tasks</div></div></div>
+  <section>
+    <h2>The problem</h2>
+    <p>Chromatin, the packaged form of DNA in the nucleus, is regulated by histone modifications, chromatin-modifying enzymes and transcription factors acting together. New <em>multiplexed</em> assays measure many of these chromatin regulatory factors (CRFs) in one experiment. Hi-Plex CUT&amp;Tag uses 36 barcoded antibodies and records which pair of factors sat on the same DNA fragment, covering more than 600 CRF pairs; ChIP-DIP maps more than 160 DNA-associated proteins in parallel.</p>
+    <p>Turning these reads into results is hard. Barcodes must be decoded so that each fragment keeps the identity of its factor or factor pair, and the right downstream analysis changes with the question being asked. Doing this well takes both programming skill and detailed knowledge of what each assay measures.</p>
+    <p>Large language model (LLM) agents, which plan and run analyses from plain-language instructions, are an obvious candidate. But an agent writing a pipeline from scratch can produce code that runs without error and still returns a plausible but wrong result, for example by choosing an inappropriate preprocessing step or parameter. Of the eleven agent systems surveyed in the paper, none had native support for Hi-Plex CUT&amp;Tag or ChIP-DIP.</p>
+  </section>
+  <section>
+    <h2>The key idea</h2>
+    <p>ChromaPilot splits the work between an expert-curated toolkit and an LLM multi-agent system. The tools carry the assay knowledge: validated code for decoding barcodes, aligning reads and building shared data formats, plus downstream methods for clustering, differential analysis, peak calling and annotation. The agents supply flexibility: they read a request, decide which tools to chain and in what order, and pass each output to the next step.</p>
+    <p>Two pieces of structure keep the agents on track. A <strong>dependency graph</strong> records which tool outputs are valid inputs to which later tools, so plans respect the order an assay requires. For requests the library does not cover, an <strong>Autocode</strong> module writes new code, but it starts from validated intermediate files rather than rebuilding the assay pipeline from scratch.</p>
+  </section>
+  <section>
+    <h2>How it works</h2>
+    <p>Each multiplexed assay has its own preprocessing chain that ends in one aligned-read (BAM) file per target or CRF pair; conventional ChIP-seq and CUT&amp;Tag data enter as one target per library. From there, shared tools build signal tracks and region-by-target count matrices that feed biclustering, differential analysis (limma–voom or differential principal component analysis, dPCA), peak calling, and gene, transcription-factor-binding-site and pathway annotation. Around this toolkit, the agents work in stages:</p>
+    <ul class="points"><li><strong>Planner:</strong> turns the request into a step-by-step plan using the tool specifications and the dependency graph, retrieving documentation when it needs more context.</li><li><strong>Human review and Validator:</strong> no plan runs until the user has approved it and automated checks confirm it is complete and executable.</li><li><strong>Executor:</strong> runs each step with a curated tool or hands it to Autocode, which generates a Python project, runs it, checks the result and corrects it up to five times before asking the user for help.</li><li><strong>Replayer and Report Generator:</strong> the finished session becomes a script that reruns the whole analysis without calling the language model, plus a report combining figures, interpretations and retrieved literature.</li></ul>
+    <figure class="fig" style="--figw:900px"><a href="figs/overview.webp" target="_blank" rel="noopener noreferrer" title="Open full size"><img src="figs/overview.webp" width="1800" height="2226" alt="Four-panel schematic of ChromaPilot showing assay inputs and the tool library, the planning stage, the execution loop, and the output stage." loading="lazy"></a><figcaption>Figure 1 of the paper. (A) Hi-Plex CUT&amp;Tag and ChIP-DIP reads are decoded by assay-specific preprocessing into per-target BAM files that feed shared post-processing and downstream tools. (B–D) The agents plan the analysis with human review and validation, run each step with a curated tool or Autocode, and finish with a replayable script and a report.</figcaption></figure>
+  </section>
+  <section>
+    <h2>Three applications</h2>
+    <p>Each application started from a plain-language request.</p>
+    <ul class="points"><li><strong>Hi-Plex CUT&amp;Tag (human K562 cells).</strong> From raw reads of two samples, the agent chained six curated operations, from building the barcode reference to biclustering. CRF-pair profiles fell into 4 clusters and genomic regions into 15, which were annotated with gene features, candidate regulatory elements and transcription-factor binding sites, all without generated code.</li><li><strong>ChIP-DIP (mouse dendritic cells at 0, 6 and 24 h after LPS, a bacterial molecule that triggers an immune response).</strong> Four curated steps produced acetylation peaks and pathway enrichment; two Autocode steps added custom signal tracks at the <em>Cxcl9</em>–<em>Cxcl11</em> chemokine locus and expression boxplots for interferon-alpha response and cholesterol homeostasis genes. The tracks showed increased acetylation after stimulation.</li><li><strong>ENCODE ChIP-seq (GM23248 vs HCT116 cell lines).</strong> Ten histone marks were compared jointly with dPCA over 374,475 regions. The first two components explained 63.93% and 11.45% of the variance and separated the repressive mark H3K27me3 from active marks; matched RNA-seq data showed that, among differential regions, dPC1 tracked expression changes positively and dPC2 negatively.</li></ul>
+    <figure class="fig" style="--figw:720px"><a href="figs/chipdip.webp" target="_blank" rel="noopener noreferrer" title="Open full size"><img src="figs/chipdip.webp" width="1800" height="1715" alt="Workflow diagram above genome signal tracks, a pathway-enrichment dot plot and boxplots of gene expression across three time points." loading="lazy"></a><figcaption>Figure 3 of the paper, the ChIP-DIP application. (A) The user's request is carried out as four curated steps (teal) and two Autocode steps (purple). (B) Acetylation at the <em>Cxcl9</em>–<em>Cxcl11</em> locus is higher 6 and 24 h after LPS stimulation than at 0 h, while (C) pathway enrichment of the peaks and (D) expression of peak-associated genes complete the requested analysis.</figcaption></figure>
+  </section>
+  <section>
+    <h2>Benchmark results</h2>
+    <p>To test reliability, the study built nine tasks with expert reference answers: five nested Hi-Plex CUT&amp;Tag tasks (alignment, signal tracks, biclustering, differential analysis and peak analysis), two ChIP-DIP tasks (target clustering and peak calling), and two Autocode tasks outside the tool library. Each output was scored from 0 to 1 against the reference with a metric suited to its type, such as Jaccard overlap for genomic regions or the adjusted Rand index for cluster labels.</p>
+    <ul class="points"><li><strong>Standard prompts:</strong> with GPT-5 as the underlying model and 25 runs per task, six of the seven standardized tasks finished in all 25 runs and differential analysis in 24. Every completed run matched the expert reference exactly. With Claude Sonnet 4.6 (5 runs per task), only differential analysis missed a run.</li><li><strong>Prompts written by biologists:</strong> seven biologists wrote their own prompts after a brief introduction to each goal (3 runs each, 21 per task). Success stayed at 90–100% on the standardized tasks and was 86% and 95% on the two Autocode tasks.</li><li><strong>More samples:</strong> success stayed high as the input grew from 8 to 20 samples.</li><li><strong>Against other agents:</strong> averaged over the nine tasks, agreement with the reference was 1.00 for ChromaPilot, 0.94 for Claude Code given ChromaPilot's tools and dependency graph, 0.84 with the tools alone, 0.15 for Claude Code without them and 0.01 for ChatGPT used through its web interface. ChromaPilot scored highest, or tied for highest, on every task. AutoBA, a published bioinformatics agent, failed across the specialized tasks.</li></ul>
+    <p>The Claude Code comparison separates two contributions. Giving a general coding agent the curated tools raised its agreement, and adding the dependency graph raised it further, especially on the Hi-Plex tasks. Without them, Claude Code often wrote code that ran but whose outputs did not match the reference.</p>
+    <figure class="fig" style="--figw:900px"><a href="figs/benchmark.webp" target="_blank" rel="noopener noreferrer" title="Open full size"><img src="figs/benchmark.webp" width="1800" height="1349" alt="Per-task success-rate strips for ChromaPilot and a dot matrix comparing its agreement with expert references against Claude Code variants and ChatGPT across nine tasks." loading="lazy"></a><figcaption>Panels C–E of Figure 5. (C) Completed runs per task under standard prompts with GPT-5 or Claude Sonnet 4.6, and (D) with prompts written by seven biologists. (E) Agreement with expert reference outputs: circle size shows each system's mean score per task, colour its worst run, and the bars the mean over all nine tasks.</figcaption></figure>
+  </section>
+  <section>
+    <h2>Why it matters</h2>
+    <p>ChromaPilot places assay knowledge in validated tools and leaves orchestration to the agents. The benchmark suggests that, for specialized assays, a script that runs without error is not evidence of a correct analysis, and that curated tools plus an explicit workflow graph narrow that gap. Every run also leaves a replayable script, so results can be inspected and reproduced without another model call.</p>
+    <p>The same pattern could carry over to new assays: developers encode validated preprocessing as tools, record which outputs feed which steps, and reuse the shared downstream modules. The study notes its limits: the evaluation covers a defined task suite built around two multiplexed assays and a small set of datasets and models, agreement with a reference measures faithful execution rather than biological validity, and generated reports still need expert review.</p>
+  </section>
 
-  <section>
-    <h2>Overview</h2>
-    <p>Epigenomic assays produce rich data, but turning a biological question into a correct analysis takes specialized pipelines and expertise. <strong>ChromaPilot</strong> is a multi-agent system that turns a natural-language request into a validated epigenomic analysis, with the scripts and a report. It combines curated tools, workflow dependency graphs, and adaptive code generation.</p>
-  </section>
-  <section>
-    <h2>Results</h2>
-    <div class="stats"><div class="stat"><div class="stat-v">96–100%</div><div class="stat-k">task completion across seven tasks, 25 runs each</div></div><div class="stat"><div class="stat-v">7 biologists</div><div class="stat-k">rephrased the tasks; performance held up</div></div><div class="stat"><div class="stat-v">Closest to experts</div><div class="stat-k">of all systems evaluated, including AutoBA, ChatGPT, and Claude Code</div></div></div>
-  </section>
-  <section>
-    <h2>Applications</h2>
-    <ul class="points"><li>Applied to <strong>Hi-Plex CUT&amp;Tag</strong>, <strong>ChIP-DIP</strong>, and <strong>ChIP-seq</strong> data.</li><li>Uncovered combinatorial chromatin states and regulatory programs.</li></ul>
-    <div class="tags"><span class="chip">LLM agents</span><span class="chip">LangGraph</span><span class="chip">Epigenomics</span></div>
-  </section>
 </main>
 
-<footer><span>Hua (Harry) Jiang · Johns Hopkins University</span><a href="/">More about me →</a></footer>
+<footer><span>Hua (Harry) Jiang · Johns Hopkins University</span><a href="../">More about me →</a></footer>
 
 <script>
-(function(){var root=document.documentElement,btn=document.getElementById('theme');
-btn.setAttribute('aria-pressed',String(root.getAttribute('data-theme')==='dark'));
-btn.addEventListener('click',function(){var n=root.getAttribute('data-theme')==='dark'?'light':'dark';root.setAttribute('data-theme',n);btn.setAttribute('aria-pressed',String(n==='dark'));try{localStorage.setItem('theme',n);}catch(e){}});})();
+(function(){
+  var root=document.documentElement,btn=document.getElementById('theme');
+  btn.setAttribute('aria-pressed',String(root.getAttribute('data-theme')==='dark'));
+  btn.addEventListener('click',function(){var n=root.getAttribute('data-theme')==='dark'?'light':'dark';root.setAttribute('data-theme',n);btn.setAttribute('aria-pressed',String(n==='dark'));try{localStorage.setItem('theme',n);}catch(e){}});
+  /* opened from disk: folder links need an explicit index.html */
+  if(location.protocol==='file:'){document.querySelectorAll('a[href]').forEach(function(a){var h=a.getAttribute('href');if(/^([a-z]+:|#|\/\/)/i.test(h))return;var i=h.indexOf('#'),p=i<0?h:h.slice(0,i),r=i<0?'':h.slice(i);if(/\/$/.test(p))a.setAttribute('href',p+'index.html'+r);});}
+  var am=document.getElementById('authorsMore');
+  if(am){am.addEventListener('click',function(){am.previousElementSibling.hidden=false;am.remove();});}
+  var cb=document.getElementById('copyBib');
+  if(cb&&navigator.clipboard){cb.addEventListener('click',function(){navigator.clipboard.writeText(document.getElementById('bibText').textContent).then(function(){cb.textContent='Copied!';setTimeout(function(){cb.textContent='Copy';},1500);});});}
+})();
 </script>
 </body>
 </html>
