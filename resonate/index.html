@@ -84,7 +84,7 @@ document.documentElement.setAttribute('data-theme',t);})();
 
 </main>
 
-<footer><span>Hua (Harry) Jiang · Johns Hopkins University</span><a href="../">More about me →</a></footer>
+<footer><span>Hua (Harry) Jiang · Johns Hopkins University</span><span>This site logs visits, including IP addresses, for basic statistics.</span><a href="../">More about me →</a></footer>
 
 <script>
 (function(){
@@ -98,6 +98,14 @@ document.documentElement.setAttribute('data-theme',t);})();
   var cb=document.getElementById('copyBib');
   if(cb&&navigator.clipboard){cb.addEventListener('click',function(){navigator.clipboard.writeText(document.getElementById('bibText').textContent).then(function(){cb.textContent='Copied!';setTimeout(function(){cb.textContent='Copy';},1500);});});}
 })();
+</script>
+<script>
+/* visit log (see footer note): one beacon per page view, plus CV / poster clicks; live site only */
+(function(){if(location.hostname!=='j041120h.github.io'||!navigator.sendBeacon)return;
+var U='https://harry-site-visits.harry-site-visits.workers.dev/hit';
+function hit(p){try{navigator.sendBeacon(U,JSON.stringify({p:p,r:document.referrer}));}catch(e){}}
+hit(location.pathname+location.search);
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href]');if(!a)return;var h=a.getAttribute('href');if(/Hua_Jiang_CV\.pdf|poster\.jpg/.test(h))hit('[download] '+h.split('?')[0]);});})();
 </script>
 </body>
 </html>

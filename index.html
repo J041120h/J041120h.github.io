@@ -322,7 +322,7 @@ footer a{color:inherit}
 </div>
 </section>
 
-<footer><span>Hua (Harry) Jiang · Baltimore, MD · Updated November 2026</span></footer>
+<footer><span>Hua (Harry) Jiang · Baltimore, MD · Updated November 2026</span><span>This site logs visits, including IP addresses, for basic statistics.</span></footer>
 </main>
 
 <button class="to-top" id="toTop" type="button" aria-label="Back to top">
@@ -373,6 +373,14 @@ footer a{color:inherit}
   toTop.addEventListener('click',function(){scrollTo({top:0,behavior:'smooth'});});
   var tick=false;addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(function(){spy();tick=false;});}},{passive:true});addEventListener('resize',spy);spy();
 })();
+</script>
+<script>
+/* visit log (see footer note): one beacon per page view, plus CV / poster clicks; live site only */
+(function(){if(location.hostname!=='j041120h.github.io'||!navigator.sendBeacon)return;
+var U='https://harry-site-visits.harry-site-visits.workers.dev/hit';
+function hit(p){try{navigator.sendBeacon(U,JSON.stringify({p:p,r:document.referrer}));}catch(e){}}
+hit(location.pathname+location.search);
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href]');if(!a)return;var h=a.getAttribute('href');if(/Hua_Jiang_CV\.pdf|poster\.jpg/.test(h))hit('[download] '+h.split('?')[0]);});})();
 </script>
 </body>
 </html>
